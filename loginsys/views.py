@@ -1,5 +1,7 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 # Create your views here.
+from django.template.loader import get_template
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm
 
@@ -9,7 +11,7 @@ class RegisterFormView(FormView):
 
     # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
     # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
-    success_url = "register_succesfully.html"
+    success_url = "/success/"
 
     # Шаблон, который будет использоваться при отображении представления.
     template_name = "register.html"
@@ -20,3 +22,8 @@ class RegisterFormView(FormView):
 
         # Вызываем метод базового класса
         return super(RegisterFormView, self).form_valid(form)
+
+def success(request):
+    t = get_template('register_succesfully.html')
+    html = t.render()
+    return HttpResponse(html)
