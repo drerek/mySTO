@@ -15,7 +15,7 @@ def home(request):
 
 def tabl(request):
     t = get_template('tabl.html')
-    html = t.render(Context({'detail' : Details.objects.all()}))
+    html = t.render({'detail' : Details.objects.all()})
     return HttpResponse(html)
 
 def about(request):
