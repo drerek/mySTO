@@ -7,4 +7,4 @@ urlpatterns = [
     url(r'^table/get/(?P<cars_id>)\d+', tableforeach),
     url(r'^about/', about),
     url(r'^', home),
-            ]
+    ]
