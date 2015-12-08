@@ -7,7 +7,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class RegisterFormView(FormView):
-    form_class = UserCreationForm
+
 
     # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
     # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
