@@ -81,6 +81,28 @@
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
         </div><!-- /.col-lg-4 -->
+        <style>
+              #blink {
+                  -webkit-animation: blink 1s linear infinite;
+                  animation: blink 1s linear infinite;
+              }
+              @-webkit-keyframes blink {
+                  0% { color: rgb(250, 0, 0); }
+                  50% { color: rgba(250, 0, 17, 0); }
+                  100% { color: rgba(250, 0, 0, 0); }
+              }
+              @keyframes blink {
+                  0% { color: rgb(250, 0, 0); }
+                  50% { color: rgba(250, 0, 0, 0); }
+                  100% { color: rgba(250, 0, 0, 0); }
+              }
+          </style>
+        <div class="col-lg-4">
+          <a href="http://hyundai.com.ua/" target="_blank"><img class="img-circle" src="{% static "hyundai_ico.png" %}" alt="Generic placeholder image" width="140" height="140"></a>
+          <h2 id="blink"><b>NEW!</b></h2>
+          <!--<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
+        </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
 
