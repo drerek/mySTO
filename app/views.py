@@ -14,7 +14,7 @@ def home(request):
     return HttpResponse(html)
 
 def tabl(request):
-    t = get_template('tabl.html')
+    t = get_template('tableall.html')
     html = t.render({'detail' : Details.objects.all()})
     return HttpResponse(html)
 
