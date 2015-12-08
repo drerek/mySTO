@@ -123,5 +123,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    ('static', 'I:\mySTO\static'),
+    ('static', 'D:/PycharmProjects/mySTO(git)/static'),
 )
