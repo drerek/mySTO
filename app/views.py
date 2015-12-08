@@ -22,3 +22,8 @@ def about(request):
     t = get_template('about.html')
     html = t.render()
     return HttpResponse(html)
+
+def tableforeach(request, cars_id=1):
+    t = get_template('tablforeach.html')
+    html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id)})
+    return HttpResponse(html)
