@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table >
+
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Марка автомобіля</th>
+                  <th>Модель</th>
+                  <th>Запчастина</th>
+                  <th>Є в наявності</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for details in detail %}
+                <tr>
+                  <td>{{ details.id }}</td>
+                  <td>{{ details.details_cars }}</td>
+                  <td>{{ details.details_name }}</td>
+                  <td>{{ details.details_price }}</td>
+                  <td>
+                      {% if details.details_isav %}
+                      В наявності! Вітаємо!
+                      {% else %}
+                      Немає в наявності. :(
+                      {% endif %}
+                  </td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+</body>
+</html>

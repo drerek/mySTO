@@ -24,6 +24,6 @@ def about(request):
     return HttpResponse(html)
 
 def tableforeach(request, cars_id=1):
-    t = get_template('tablforeach.html')
-    html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id)})
+    t = get_template('tableforeach.html')
+    html = t.render(Context({'detail' : Details.objects.filter(details_cars_id=cars_id)}))
     return HttpResponse(html)
