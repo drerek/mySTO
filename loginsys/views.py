@@ -5,9 +5,11 @@ from django.template.loader import get_template
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm
 
+from loginsys.forms import UserCreateForm
+
 
 class RegisterFormView(FormView):
-
+    form_class = UserCreateForm
 
     # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
     # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
