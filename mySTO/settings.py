@@ -124,5 +124,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    ('static', 'I:\mySTO\static'),
+    ('static', 'E:\Django\Projects\mySTOgit\static'),
 )
