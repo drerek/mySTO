@@ -14,7 +14,7 @@ def home(request):
     return HttpResponse(html)
 
 def tabl(request):
-    t = get_template('tabl.html')
+    t = get_template('tableall.html')
     html = t.render({'detail' : Details.objects.all()})
     return HttpResponse(html)
 
@@ -25,5 +25,5 @@ def about(request):
 
 def tableforeach(request, cars_id=1):
     t = get_template('tableforeach.html')
-    html = t.render(Context({'detail' : Details.objects.filter(details_cars_id=cars_id)}))
+    html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id)})
     return HttpResponse(html)

@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block page %}
+   <p>
+     <form action="." method="post">
+         {% csrf_token %}
+    {% if form.username.errors %}
+      {{ form.username.html_error_list }}
+    {% endif %}
+    <label for="id_username">Логин:</label> {{ form.username }}
+
+     {% if form.email.errors %}
+      {{ form.email.html_error_list }}
+    {% endif %}
+    <label for="id_email">E-mail:</label> {{ form.email }}
+
+    {% if form.password1.errors %}
+      {{ form.password1.html_error_list }}
+    {% endif %}
+    <label for="id_password1">Пароль:</label> {{ form.password1 }}
+
+    {% if form.password2.errors %}
+      {{ form.password2.html_error_list }}
+    {% endif %}
+    <label for="id_password2">Пароль (снова):</label> {{ form.password2 }}
+ <input type="submit" value="Зарегистрировать" />
+</form>
+    </p>
+{% endblock %}
