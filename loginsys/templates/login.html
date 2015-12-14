@@ -1,17 +1,15 @@
 {% extends 'index.html' %}
 
 {% block page %}
- <p>
-     <form action="/accounts/login/" method="post">
-         {% csrf_token %}
-         <input type="text" name="username" id="username" />
-         <input type="password" name="password" id="password" />
-         {% if login_error %}
+    <form id="slick-login" action="/accounts/login/" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" id="username"/>
+        <input type="password" name="password" id="password"/>
+        {% if login_error %}
             <label>{{ login_error }}</label>
-         {% endif %}
-         <input class="button" type="submit" value="Вхід" />
-
+        {% endif %}
+        <input class="button" type="submit" value="Вхід">
+        <input type="button" onclick="location.href='/register/'" class="btn btn-success" value="Реєстрація">
     </form>
-    <button onclick="location.href='/register/'" class="btn btn-success">Реєстрація</button>
- </p>
+
 {% endblock %}
