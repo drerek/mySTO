@@ -7,5 +7,3 @@ class CreateForma(ModelForm):
     class Meta:
             model = Forma
             fields = ["last_name", "first_name", "date", "car_name", "detail", "problem"]
-
-    detail=Details.objects.filter(details_cars_id="1")
