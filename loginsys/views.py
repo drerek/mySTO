@@ -34,23 +34,24 @@ def success(request):
     return HttpResponse(html)
 
 def login(request):
-    args = {}
-    args.update(csrf(request))
-    if request.POST:
-        username = request.POST.get('username', '')
-        password = request.POST.get('password', '')
-        user = auth.authenticate(username=username, password=password)
-        if user is not None and user.is_active:
-            # Правильный пароль и пользователь "активен"
-            auth.login(request, user)
-            # Перенаправление на "правильную" страницу
-            return HttpResponseRedirect("/home/")
+        args = {}
+        args.update(csrf(request))
+        if request.POST:
+            username = request.POST.get('username', '')
+            password = request.POST.get('password', '')
+            user = auth.authenticate(username=username, password=password)
+            if user is not None and user.is_active:
+                # Правильный пароль и пользователь "активен"
+                auth.login(request, user)
+                # Перенаправление на "правильную" страницу
+                return HttpResponseRedirect("/home/")
+            else:
+                #Отображение страницы с ошибкой
+                args['login_error'] = "Такого користувача не знайдено :("
+                return render_to_response('login.html', args)
         else:
-            #Отображение страницы с ошибкой
-            args['login_error'] = "Такого користувача не знайдено :("
             return render_to_response('login.html', args)
-    else:
-        return render_to_response('login.html', args)
+
 
 def logout(request):
     auth.logout(request)
