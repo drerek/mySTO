@@ -17,4 +17,4 @@ class Forma(models.Model):
     is_checked = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.date
+        return self.date.strftime("%Y-%m-%d %H:%M+02:00")
