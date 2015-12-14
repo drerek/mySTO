@@ -1,8 +1,10 @@
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.contrib import auth
-from forma.forms import CreateForma
+from django.template.loader import get_template
 
+from forma.forms import CreateForma
+from forma.models import Forma
 
 
 def add_forma(request):
@@ -16,3 +18,8 @@ def add_forma(request):
     else:
         form = CreateForma()
         return render(request, 'forma.html', {'form': form, 'username':auth.get_user(request).username})
+
+def myforms(request):
+    t = get_template('myforms.html')
+    html = t.render({'myforms' : Forma.objects.filter(user_name=auth.get_user(request)), 'username' : auth.get_user(request).username})
+    return HttpResponse(html)

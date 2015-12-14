@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+
+{% block page %}
+
+    <table class="table table-striped">
+    <thead>
+     <tr>
+         <th> Імя замовника </th>
+         <th>Прізвище замовника</th>
+         <th>Дата запису</th>
+         <th>Машина</th>
+         <th>Деталь на заміну</th>
+         <th>Заявлена проблема</th>
+         <th>Перевірка адміністратором</th>
+     </tr>
+     </thead>
+    <tbody>
+    {%  for myform in myforms %}
+<tr>
+    <td>{{  myform.first_name  }}</td>
+    <td> {{ myform.last_name }}</td>
+    <td>{{ myform.date }}</td>
+    <td>{{ myform.car_name }}</td>
+    <td>{{ myform.detail }}</td>
+    <td>{{ myform.problem }}</td>
+<td> {% if myform.is_checked %}
+                      Заявка підтвержена, час узгоджений
+                      {% else %}
+                      Заявка не перевірена
+                      {% endif %}</td>
+
+
+        </tr>
+    {% endfor %}
+</tbody>
+    </table>
+{% endblock %}
