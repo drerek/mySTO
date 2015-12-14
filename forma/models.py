@@ -1,14 +1,9 @@
 from django.contrib.auth.models import User
 from django.db import models
-from django.contrib import auth
-
-# Create your models here.
 from app.models import Cars, Details
 
 
-
 class Forma(models.Model):
-
     class Meta():
         db_table = 'forma'
 
@@ -20,6 +15,3 @@ class Forma(models.Model):
     problem = models.TextField(max_length=200, default='')
     date = models.DateTimeField()
     is_checked = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.first_name
