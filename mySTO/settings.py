@@ -111,9 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'uk-UA'
 
-TIME_ZONE = pytz.timezone('Europe/Kiev')
-
-#TIME_ZONE = 'UTC+2:00'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
