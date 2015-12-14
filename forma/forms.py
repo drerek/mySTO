@@ -5,4 +5,3 @@ class CreateForma(ModelForm):
     class Meta:
             model = Forma
             fields = ["last_name", "first_name", "date", "car_name", "detail", "problem"]
-

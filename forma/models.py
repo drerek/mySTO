@@ -15,3 +15,6 @@ class Forma(models.Model):
     problem = models.TextField(max_length=200, default='')
     date = models.DateTimeField()
     is_checked = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.date
