@@ -20,14 +20,9 @@ def tabl(request):
     return HttpResponse(html)
 
 def about(request):
-    if auth.get_user(request).username:
-        t = get_template('about.html')
-        html = t.render({'username' : auth.get_user(request).username})
-        return HttpResponse(html)
-    else:
-        t = get_template('errors.html')
-        html = t.render({'username' : auth.get_user(request).username})
-        return HttpResponse(html)
+    t = get_template('errors.html')
+    html = t.render({'username' : auth.get_user(request).username})
+    return HttpResponse(html)
 
 
 def tableforeach(request, cars_id=1):
