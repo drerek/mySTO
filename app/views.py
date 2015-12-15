@@ -20,7 +20,7 @@ def tabl(request):
     return HttpResponse(html)
 
 def about(request):
-    t = get_template('errors.html')
+    t = get_template('about.html')
     html = t.render({'username' : auth.get_user(request).username})
     return HttpResponse(html)
 
