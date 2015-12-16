@@ -2,34 +2,40 @@
 {% load staticfiles %}
 
 {% block page %}
-   <p>
-     <form action="." method="post">
-         {% csrf_token %}
-         <br>
-      {{ form.username.errors }}
-    <label required=True for="id_username">Логин:</label> {{ form.username }}
+     <form   action="." method="post">
+         <div class="main-signin__registr">
+             <div class="main-signin__head">
+                <p>РЕЄСТРАЦІЯ</p>
+             </div>
+             <div class="main-signin__middle">
+                 <div class="middle__form__registr">
+                     {% csrf_token %}
+                         <br>
+                    <label required=True for="id_username">Логін:</label> {{ form.username }}
+                         {{ form.username.errors }}
 
-         <br>
-      {{ form.email.errors }}
-    <label for="id_email">E-mail:</label> {{ form.email }}
+                         <br>
+                    <label for="id_email">E-mail:</label> {{ form.email }}
+                    {{ form.email.errors }}
 
-         <br>
-         {{ form.first_name.errors }}
-    <label required=True for="id_first_name">Імя:</label> {{ form.first_name }}
+                         <br>
+                    <label required=True for="id_first_name">Ім'я:</label> {{ form.first_name }}
+                    {{ form.first_name.errors }}
 
-         <br>
-         {{ form.last_name.errors }}
-    <label required=True for="id_last_name">Прізвище:</label> {{ form.last_name }}
+                         <br>
+                    <label required=True for="id_last_name">Прізвище:</label> {{ form.last_name }}
+                    {{ form.last_name.errors }}
 
-         <br>
-     {{ form.password1.errors }}
-    <label for="id_password1">Пароль:</label> {{ form.password1 }}
+                         <br>
+                    <label for="id_password1">Пароль:</label> {{ form.password1 }}
+                    {{ form.password1.errors }}
 
-         <br>
-         {{ form.password2.errors }}
-    <label for="id_password2">Пароль (снова):</label> {{ form.password2 }}
-
- <input type="submit" value="Зарегистрировать" />
-</form>
-    </p>
+                         <br>
+                    <label for="id_password2">Пароль (знову):</label> {{ form.password2 }}
+                    {{ form.password2.errors }}
+                     <input type="submit" value="Зареєструвати" />
+                 </div>
+             </div>
+         </div>
+     </form>
 {% endblock %}
