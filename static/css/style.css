@@ -2,7 +2,6 @@
     -webkit-animation: blink 1s linear infinite;
     animation: blink 1s linear infinite;
 }
-
 @-webkit-keyframes blink {
     0% {
         color: rgb(250, 0, 0);
@@ -27,188 +26,251 @@
     }
 }
 
-#slick-login {
-    width: 220px;
-    height: 155px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -110px;
-    margin-top: -75px;
-
-    -webkit-animation: login 1s ease-in-out;
-    -moz-animation: login 1s ease-in-out;
-    -ms-animation: login 1s ease-in-out;
-    -o-animation: login 1s ease-in-out;
-    animation: login 1s ease-in-out;
+.list-group {
+    color: #9c0dff;
+    text-align: center;
+    font-size: 15pt;
 }
 
-#slick-login label {
-    display: none;
+body {
+    background: url("images/bg.png") repeat;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.placeholder {
-    color: #444;
+.main-signin {
+    box-shadow: 0px 10px 20px #000;
+    width: 455px;
+    height: 200px;
+    margin: 100px auto;
 }
 
-#slick-login input[type="text"], #slick-login input[type="password"] {
-    width: 100%;
-    height: 40px;
-    positon: relative;
-    margin-top: 7px;
-    font-size: 14px;
-    color: #444;
+.main-signin .main-signin__head {
+    background: #242328;
+    border-bottom: 1px solid #2d2f32;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 1px 0px #000;
+    padding: 12px 0;
+}
+
+.main-signin .main-signin__head p {
+    color: #13caa2;
+    text-align: center;
+    font-size: 15pt;
+}
+
+.main-signin .main-signin__middle {
+    background: #1f1e23;
+    border-bottom: 1px solid #2d2f32;
+    border-top: 1px solid #2d2f32;
+    box-shadow: 0px 1px 0px #000;
+}
+
+.main-signin .main-signin__middle .middle__form {
+    margin: 40px 0 20px 0;
+}
+
+.main-signin .main-signin__middle .middle__form label {
+    color: #ff0011;
+    text-indent: 20%;
+    font-size: 12pt;
+}
+
+.main-signin .main-signin__middle .middle__form ::-webkit-input-placeholder {
+    color: #25262a;
+}
+
+.main-signin .main-signin__middle .middle__form :-moz-placeholder {
+    color: #25262a;
+}
+
+.main-signin .main-signin__middle .middle__form ::-moz-placeholder {
+    color: #25262a;
+}
+
+.main-signin .main-signin__middle .middle__form :-ms-input-placeholder {
+    color: #25262a;
+}
+
+.main-signin .main-signin__middle .middle__form input[type="text"], .main-signin .main-signin__middle .middle__form input[type="password"], .main-signin .main-signin__middle .middle__form input[type="submit"], .middle__form input[type="button"] {
+    background: #daf4fe;
+    border-radius: 5px 5px 0 0;
+    border: none;
+    color: #25262a;
+    display: block;
+    margin: 0 20px;
     outline: none;
-    border: 1px solid rgba(0, 0, 0, .49);
-
-    padding-left: 20px;
-
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-    border-radius: 6px;
-
-    background-image: -webkit-linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-    background-image: -moz-linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-    background-image: -o-linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-    background-image: -ms-linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-    background-image: linear-gradient(bottom, #FFFFFF 0%, #F2F2F2 100%);
-
-    -webkit-box-shadow: inset 0px 2px 0px #d9d9d9;
-    box-shadow: inset 0px 2px 0px #d9d9d9;
-
-    -webkit-transition: all .1s ease-in-out;
-    -moz-transition: all .1s ease-in-out;
-    -o-transition: all .1s ease-in-out;
-    -ms-transition: all .1s ease-in-out;
-    transition: all .1s ease-in-out;
+    padding: 15px 0;
+    width: 90%;
 }
 
-#slick-login input[type="text"]:focus, #slick-login input[type="password"]:focus {
-    -webkit-box-shadow: inset 0px 2px 0px #a7a7a7;
-    box-shadow: inset 0px 2px 0px #a7a7a7;
+.main-signin .main-signin__middle .middle__form input[type="text"], .main-signin .main-signin__middle .middle__form input[type="password"] {
+    padding: 15px 20px;
+    width: 90%;
 }
 
-#slick-login input:first-child {
-    margin-top: 0px;
+.main-signin .main-signin__middle .middle__form input[type="password"] {
+    border-top: 1px solid #acabab;
+    border-radius: 0 0 5px 5px;
 }
 
-#slick-login input[type="submit"] {
-    width: 100%;
-    height: 50px;
-    margin-top: 7px;
+.main-signin .main-signin__middle .middle__form input[type="submit"], .middle__form input[type="button"] {
+    background: #00aeef;
+    border-radius: 5px;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #80d6f7;
     color: #fff;
     font-size: 18px;
-    font-weight: bold;
-    text-shadow: 0px -1px 0px #5b6ddc;
-    outline: none;
-    border: 1px solid rgba(0, 0, 0, .49);
-
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-    border-radius: 6px;
-
-    background-color: #5466da;
-    background-image: -webkit-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-    background-image: -moz-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-    background-image: -o-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-    background-image: -ms-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-    background-image: linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-
-    -webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
-    box-shadow: inset 0px 1px 0px #9ab1ec;
-
+    margin-top: 15px;
     cursor: pointer;
-
-    -webkit-transition: all .1s ease-in-out;
-    -moz-transition: all .1s ease-in-out;
-    -o-transition: all .1s ease-in-out;
-    -ms-transition: all .1s ease-in-out;
-    transition: all .1s ease-in-out;
+    text-transform: uppercase;
 }
 
-#slick-login input[type="submit"]:hover {
-    background-color: #5f73e9;
-    background-image: -webkit-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-    background-image: -moz-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-    background-image: -o-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-    background-image: -ms-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-    background-image: linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-
-    -webkit-box-shadow: inset 0px 1px 0px #aab9f4;
-    box-shadow: inset 0px 1px 0px #aab9f4;
-    margin-top: 10px;
+.main-signin .main-signin__middle .middle__form input[type="submit"]:active, .middle__form input[type="button"]:active {
+    background: #80d6f7;
 }
 
-#slick-login input[type="submit"]:active {
-    background-color: #7588e1;
-    background-image: -webkit-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-    background-image: -moz-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-    background-image: -o-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-    background-image: -ms-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-    background-image: linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-
-    -webkit-box-shadow: inset 0px 1px 0px #93a9e9;
-    box-shadow: inset 0px 1px 0px #93a9e9;
+.main-signin__registr {
+    box-shadow: 0px 10px 20px #000;
+    width: 500px;
+    height: 200px;
+    margin: 15px auto;
 }
 
-#slick-login input[type="button"] {
-    width: 100%;
-    height: 50px;
-    margin-top: 7px;
+.main-signin__registr .main-signin__head {
+    background: #242328;
+    border-bottom: 1px solid #2d2f32;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0px 1px 0px #000;
+    padding: 10px 0;
+}
+
+.main-signin__registr .main-signin__head p {
+    color: #13caa2;
+    text-align: center;
+    font-size: 15pt;
+}
+
+.main-signin__registr .main-signin__middle {
+    background: #1f1e23;
+    border-bottom: 1px solid #2d2f32;
+    border-top: 1px solid #2d2f32;
+    box-shadow: 0px 1px 0px #000;
+    border-radius: 0 0 10px 10px;
+}
+
+.main-signin__registr .main-signin__middle .middle__form__registr {
+    margin: 0 10px 10px 10px;
+}
+
+.main-signin__registr .main-signin__middle .middle__form__registr label {
+    color: #ffde09;
+    text-indent: 40%;
+    font-size: 12pt;
+}
+
+.main-signin__registr .main-signin__middle .middle__form__registr input[type="text"], .main-signin__registr .main-signin__middle .middle__form__registr input[type="password"] {
+    background: #daf4fe;
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    color: #25262a;
+    display: block;
+    margin: 0 15px;
+    outline: none;
+    padding: 15px 0;
+    width: 90%;
+}
+
+.main-signin__registr .main-signin__middle .middle__form__registr input[type="submit"] {
+    background: #daf4fe;
+    border-radius: 5px 5px 5px 5px;
+    border: none;
+    color: #25262a;
+    display: block;
+    margin: 0 20px;
+    outline: none;
+    padding: 15px 0;
+    width: 90%;
+}
+
+.main-signin__registr .main-signin__middle .middle__form__registr input[type="text"], .main-signin__registr .main-signin__middle .middle__form__registr input[type="password"] {
+    padding: 15px 20px;
+    width: 93%;
+
+}
+
+.main-signin__registr .main-signin__middle .middle__form__registr input[type="submit"] {
+    background: #00aeef;
+    border-radius: 5px;
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #80d6f7;
     color: #fff;
     font-size: 18px;
-    font-weight: bold;
-    text-shadow: 0px -1px 0px #5b6ddc;
-    outline: none;
-    border: 1px solid rgba(0, 0, 0, .49);
-
-    -webkit-background-clip: padding-box;
-    -moz-background-clip: padding;
-    background-clip: padding-box;
-    border-radius: 6px;
-
-    background-color: #5466da;
-    background-image: -webkit-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-    background-image: -moz-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-    background-image: -o-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-    background-image: -ms-linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-    background-image: linear-gradient(bottom, #5466da 0%, #768ee4 100%);
-
-    -webkit-box-shadow: inset 0px 1px 0px #9ab1ec;
-    box-shadow: inset 0px 1px 0px #9ab1ec;
-
+    margin-top: 15px;
     cursor: pointer;
-
-    -webkit-transition: all .1s ease-in-out;
-    -moz-transition: all .1s ease-in-out;
-    -o-transition: all .1s ease-in-out;
-    -ms-transition: all .1s ease-in-out;
-    transition: all .1s ease-in-out;
+    text-transform: uppercase;
 }
 
-#slick-login input[type="button"]:hover {
-    background-color: #5f73e9;
-    background-image: -webkit-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-    background-image: -moz-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-    background-image: -o-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-    background-image: -ms-linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-    background-image: linear-gradient(bottom, #5f73e9 0%, #859bef 100%);
-
-    -webkit-box-shadow: inset 0px 1px 0px #aab9f4;
-    box-shadow: inset 0px 1px 0px #aab9f4;
-    margin-top: 10px;
+.main-signin__registr .main-signin__middle .middle__form__registr input[type="submit"]:active {
+    background: #80d6f7;
 }
 
-#slick-login input[type="button"]:active {
-    background-color: #7588e1;
-    background-image: -webkit-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-    background-image: -moz-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-    background-image: -o-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-    background-image: -ms-linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-    background-image: linear-gradient(bottom, #7588e1 0%, #7184df 100%);
-
-    -webkit-box-shadow: inset 0px 1px 0px #93a9e9;
-    box-shadow: inset 0px 1px 0px #93a9e9;
+.main-signin .main-signin__foot {
+    background: #242328;
+    border-top: 1px solid #2d2f32;
+    border-radius: 0 0 10px 10px;
+    float: left;
+    padding: 12px 0;
+    width: 100%;
 }
+
+.main-signin .main-signin__foot .foot__left {
+    float: left;
+    padding: 0 0 0 6%;
+    width: 56%;
+}
+
+.main-signin .main-signin__foot .foot__left p {
+    color: #13caa2;
+    margin: 0;
+    padding: 16px 0 0 0;
+    text-transform: uppercase;
+    font-size: 12pt;
+}
+
+.main-signin .main-signin__foot .foot__right {
+    float: left;
+    width: 42%;
+}
+
+.main-signin .main-signin__foot .foot__right .twit,
+.main-signin .main-signin__foot .foot__right .face {
+    float: left;
+}
+
+.main-signin .main-signin__foot .foot__right .twit a,
+.main-signin .main-signin__foot .foot__right .face a {
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+    display: block;
+    margin: -12px 0;
+    text-indent: -999em;
+    width: 85px;
+    height: 77px;
+}
+
+.main-signin .main-signin__foot .foot__right .twit a:hover,
+.main-signin .main-signin__foot .foot__right .face a:hover {
+    background-color: #2d2f32;
+}
+
+.main-signin .main-signin__foot .foot__right .twit a {
+    background: url("images/twitter.png") no-repeat center;
+}
+
+.main-signin .main-signin__foot .foot__right .face a {
+    background: url("images/facebook.png") no-repeat center;
+    border-radius: 0 0 10px 0;
+}
+
