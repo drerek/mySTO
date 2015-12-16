@@ -167,8 +167,12 @@ body {
     text-indent: 40%;
     font-size: 12pt;
 }
-
-.main-signin__registr .main-signin__middle .middle__form__registr input[type="text"], .main-signin__registr .main-signin__middle .middle__form__registr input[type="password"] {
+.main-signin__registr .main-signin__middle .middle__form__registr li {
+    color: #ff000a;
+    font-size: 12pt;
+     margin: 0 120px;
+}
+.main-signin__registr .main-signin__middle .middle__form__registr input[type="text"],.main-signin__registr .main-signin__middle .middle__form__registr input[type="email"], .main-signin__registr .main-signin__middle .middle__form__registr input[type="password"] {
     background: #daf4fe;
     border-radius: 5px 5px 5px 5px;
     border: none;
@@ -192,7 +196,7 @@ body {
     width: 90%;
 }
 
-.main-signin__registr .main-signin__middle .middle__form__registr input[type="text"], .main-signin__registr .main-signin__middle .middle__form__registr input[type="password"] {
+.main-signin__registr .main-signin__middle .middle__form__registr input[type="text"],.main-signin__registr .main-signin__middle .middle__form__registr input[type="email"], .main-signin__registr .main-signin__middle .middle__form__registr input[type="password"] {
     padding: 15px 20px;
     width: 93%;
 
