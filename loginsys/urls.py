@@ -7,4 +7,5 @@ urlpatterns = [
         url(r'^success/', success),
         url(r'^accounts/login/$',  login),
         url(r'^accounts/logout/$', logout),
+        url(r'^ulogin/', include('django_ulogin.urls')),
           ]

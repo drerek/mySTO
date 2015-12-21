@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^', include('forma.urls')),
     url(r'^', include('loginsys.urls')),
     url(r'^', include('app.urls')),
-    url(r'^ulogin/', include('django_ulogin.urls')),
+    #url(r'^ulogin/', include('django_ulogin.urls')),
 
 
     ]
