@@ -42,7 +42,7 @@
                     <div class="nav  navbar-right">
 
                         {% if username %}
-                            <li> Вітаємо, {{ username }} <button onclick="location.href='/accounts/logout/'" class="btn btn-success">Вихід</button></li>
+                            <li> Вітаємо, {{ first_name }} <button onclick="location.href='/accounts/logout/'" class="btn btn-success">Вихід</button></li>
                           {% else %}
                             <button onclick="location.href='/accounts/login/'" class="btn btn-success">Вхід</button>
 

@@ -11,21 +11,38 @@ from app.models import Cars, Details
 
 def home(request):
     t = get_template('home.html')
-    html = t.render({'username' : auth.get_user(request).username})
+    username = auth.get_user(request).username
+    if username:
+        html = t.render({'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name})
+    else:
+        html = t.render({'username' : auth.get_user(request).username})
     return HttpResponse(html)
 
 def tabl(request):
     t = get_template('tableall.html')
-    html = t.render({'detail': Details.objects.all(), 'username' : auth.get_user(request).username})
+    username = auth.get_user(request).username
+    if username:
+        html = t.render({'detail': Details.objects.all(), 'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name})
+    else:
+        html = t.render({'detail': Details.objects.all(), 'username' : auth.get_user(request).username})
     return HttpResponse(html)
 
 def about(request):
     t = get_template('about.html')
-    html = t.render({'username' : auth.get_user(request).username})
+    username = auth.get_user(request).username
+    if username:
+        html = t.render({'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name})
+    else:
+        html = t.render({'username' : auth.get_user(request).username})
     return HttpResponse(html)
 
 
 def tableforeach(request, cars_id=1):
     t = get_template('tableall.html')
-    html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'username' : auth.get_user(request).username})
+    username = auth.get_user(request).username
+    if username:
+        html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'username' : auth.get_user(request).username,
+                         'first_name': auth.get_user(request).first_name})
+    else:
+        html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'username' : auth.get_user(request).username})
     return HttpResponse(html)

@@ -19,9 +19,18 @@ def add_forma(request):
              return HttpResponseRedirect("/home/")
     else:
         form = CreateForma()
-        return render_to_response('forma.html', {'form': form, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
+        username=auth.get_user(request).username
+        if username:
+            return render_to_response('forma.html', {'form': form,'first_name':auth.get_user(request).first_name, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
+        else:
+            return render_to_response('forma.html', {'form': form, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
+
 
 def myforms(request):
     t = get_template('myforms.html')
-    html = t.render({'myforms' : Forma.objects.filter(user_name=auth.get_user(request)), 'username' : auth.get_user(request).username})
+    username=auth.get_user(request).username
+    if username:
+        html = t.render({'myforms' : Forma.objects.filter(user_name=auth.get_user(request)),'first_name':auth.get_user(request).first_name, 'username' : auth.get_user(request).username})
+    else:
+        html = t.render({'myforms' : Forma.objects.filter(user_name=auth.get_user(request)), 'username' : auth.get_user(request).username})
     return HttpResponse(html)

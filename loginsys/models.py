@@ -5,4 +5,5 @@ from django.contrib.auth.models import BaseUserManager
 from django.db import models
 # --coding: utf-8 --
 # Create your models here.
-from django.forms import forms
+from forms import UserCreateForm
+
