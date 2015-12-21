@@ -3523,25 +3523,29 @@ a.btn.disabled, fieldset[disabled] a.btn {
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
-    border-color: #4cae4c
+    border-color: #4cae4c;
+    margin: 6px 0
 }
 
 .btn-success.focus, .btn-success:focus {
     color: #fff;
     background-color: #449d44;
-    border-color: #255625
+    border-color: #255625;
+    margin: 6px 0
 }
 
 .btn-success:hover {
     color: #fff;
     background-color: #449d44;
-    border-color: #398439
+    border-color: #398439;
+    margin: 6px 0
 }
 
 .btn-success.active, .btn-success:active, .open > .dropdown-toggle.btn-success {
     color: #fff;
     background-color: #449d44;
-    border-color: #398439
+    border-color: #398439;
+    margin: 6px 0
 }
 
 .btn-success.active.focus, .btn-success.active:focus, .btn-success.active:hover, .btn-success:active.focus, .btn-success:active:focus, .btn-success:active:hover, .open > .dropdown-toggle.btn-success.focus, .open > .dropdown-toggle.btn-success:focus, .open > .dropdown-toggle.btn-success:hover {
@@ -4286,6 +4290,7 @@ select[multiple].input-group-sm > .form-control, select[multiple].input-group-sm
 }
 
 .nav > li {
+    color: #ffde09;
     position: relative;
     display: block
 }
