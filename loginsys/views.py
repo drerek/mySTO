@@ -1,3 +1,4 @@
+# -- coding: utf-8 --
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect, render_to_response
 # Create your views here.
@@ -48,9 +49,9 @@ def login(request):
             else:
                 #Отображение страницы с ошибкой
                 args['login_error'] = "Такого користувача не знайдено :("
-                return render_to_response('login.html', args)
+                return render_to_response('login.html',  args , context_instance = RequestContext(request))
         else:
-            return render_to_response('login.html', args)
+            return render_to_response('login.html',  args , context_instance = RequestContext(request))
 
 
 def logout(request):

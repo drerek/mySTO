@@ -21,7 +21,7 @@ def tabl(request):
 
 def about(request):
     t = get_template('about.html')
-    html = t.render({'username' : auth.get_user(request).username})
+    html = t.render({'username' : auth.get_user(request)})
     return HttpResponse(html)
 
 
