@@ -1,6 +1,8 @@
+# -- coding: utf-8 --
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
 from django.contrib import auth
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 from django.template.loader import get_template
 
 from forma.forms import CreateForma
@@ -17,7 +19,7 @@ def add_forma(request):
              return HttpResponseRedirect("/home/")
     else:
         form = CreateForma()
-        return render(request, 'forma.html', {'form': form, 'username':auth.get_user(request).username})
+        return render_to_response('forma.html', {'form': form, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
 
 def myforms(request):
     t = get_template('myforms.html')
