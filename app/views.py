@@ -16,12 +16,12 @@ def home(request):
 
 def tabl(request):
     t = get_template('tableall.html')
-    html = t.render({'detail' : Details.objects.all(), 'username' : auth.get_user(request).username})
+    html = t.render({'detail': Details.objects.all(), 'username' : auth.get_user(request).username})
     return HttpResponse(html)
 
 def about(request):
     t = get_template('about.html')
-    html = t.render({'username' : auth.get_user(request)})
+    html = t.render({'username' : auth.get_user(request).username})
     return HttpResponse(html)
 
 
