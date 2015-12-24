@@ -130,7 +130,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
-    ('static', 'C:/mySTO/static/'),
+    ('static', 'C:\projects\mySTO\static'),
 
 )
 
@@ -142,4 +142,4 @@ STATICFILES_FINDERS = (
 
 )
 
-#ULOGIN_FIELDS = ['first_name', 'last_name', 'email']
+ULOGIN_FIELDS = ['first_name', 'last_name', 'email']
