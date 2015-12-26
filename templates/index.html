@@ -68,7 +68,23 @@
     <script src="{% static "static/js/jquery.datetimepicker.full.js"%}"></script>
     <script>
     $.datetimepicker.setLocale('uk');
-    $('.some_class').datetimepicker();
+    $('.some_class').datetimepicker({
+ datepicker:true,
+ allowTimes:[
+  '8:00', '10:00', '12:00', 
+  '14:00', '16:00'
+ ]
+});
+ $('.some_class').datetimepicker({
+	  onGenerate:function( ct ){
+    jQuery(this).find('.xdsoft_date')
+      .toggleClass('xdsoft_disabled');
+  },
+  minDate:'-1970/01/2',
+  maxDate:'+1970/01/2',
+  timepicker:true
+})
+
     </script>
     <script src="{% static "static/js/bootstrap.min.js" %}"></script>
     <script src="{% static "static/js/holder.min.js" %}"></script>

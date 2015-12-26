@@ -5,9 +5,10 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.template.loader import get_template
 
+from app.models import Details
 from forma.forms import CreateForma
 from forma.models import Forma
-
+import calendar
 
 def add_forma(request):
     if request.method == 'POST':
@@ -20,10 +21,12 @@ def add_forma(request):
     else:
         form = CreateForma()
         username=auth.get_user(request).username
+        c=calendar.month(2015, 12)
+        zanyato = Forma.objects.all()
         if username:
-            return render_to_response('forma.html', {'form': form,'first_name':auth.get_user(request).first_name, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
+            return render_to_response('forma.html', {'calendar':c, 'zanyato':zanyato, 'form': form,'first_name':auth.get_user(request).first_name, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
         else:
-            return render_to_response('forma.html', {'form': form, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
+            return render_to_response('forma.html', {'calendar':c, 'zanyato':zanyato, 'form': form, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
 
 
 def myforms(request):
