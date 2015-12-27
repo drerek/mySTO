@@ -36,6 +36,9 @@ body {
     background: url("images/bg.png") repeat;
     font-family: 'Open Sans', sans-serif;
 }
+.custom-date-style {
+	background-color: red !important;
+}
 
 .main-signin {
     box-shadow: 0px 10px 20px #000;

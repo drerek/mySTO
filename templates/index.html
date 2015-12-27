@@ -15,8 +15,9 @@
     <link href="{% static "static/css/carousel.css" %}" rel="stylesheet">
       <link href="{% static "static/css/dashboard.css" %}" rel="stylesheet">
       <link href="{% static "static/css/style.css" %}" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="{% static "static/css/jquery.datetimepicker.css"%}" />
-
+       <link rel="stylesheet" type="text/css" href="{% static "static/calendar/jquery.timepicker.css"%}" />
+      <link rel="stylesheet" type="text/css" href="{% static "static/calendar/lib/bootstrap-datepicker.css" %}"/>
+      <link rel="stylesheet" type="text/css" href="{% static "static/date/jquery.datetimepicker.css"%}"/>
 
 
   </head>
@@ -65,28 +66,57 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="{% static "static/js/jquery.js" %}"></script>
-    <script src="{% static "static/js/jquery.datetimepicker.full.js"%}"></script>
-    <script>
-    $.datetimepicker.setLocale('uk');
-    $('.some_class').datetimepicker({
- datepicker:true,
- allowTimes:[
-  '8:00', '10:00', '12:00', 
-  '14:00', '16:00'
- ]
-});
- $('.some_class').datetimepicker({
-	  onGenerate:function( ct ){
-    jQuery(this).find('.xdsoft_date')
-      .toggleClass('xdsoft_disabled');
-  },
-  minDate:'-1970/01/2',
-  maxDate:'+1970/01/2',
-  timepicker:true
-})
-
-    </script>
     <script src="{% static "static/js/bootstrap.min.js" %}"></script>
     <script src="{% static "static/js/holder.min.js" %}"></script>
-  </body>
+    <script type="text/javascript" src="{% static "static/calendar/jquery.timepicker.js"%}"></script>
+    <script type="text/javascript" src="{% static "static/calendar/lib/bootstrap-datepicker.js"%}"></script>
+    <script type="text/javascript" src="{% static "static/calendar/lib/site.js"%}"></script>
+  <script src="http://jonthornton.github.io/Datepair.js/dist/datepair.js"></script>
+    <script src="http://jonthornton.github.io/Datepair.js/dist/jquery.datepair.js"></script>
+<script>
+                $('#datepairExample .time').timepicker({
+                    'showDuration': true,
+                    'timeFormat': 'g:ia'
+                });
+    $('#disableTimeRangesExample').timepicker({
+    'disableTimeRanges': [
+        ['8', '12'],
+        ['15', '17']
+    ],
+        'timeFormat': 'H:i',
+        'minTime': '8',
+        'maxTime': '16',
+        'step': 120
+});
+
+            </script>
+  <script src="{% static "static/date/build/jquery.datetimepicker.full.js"%}"></script>
+  <script>
+
+$.datetimepicker.setLocale('uk');
+var dateToDisable = new Date();
+	dateToDisable.setDate(dateToDisable.getDate() + 2);
+$('#datetimepicker2').datetimepicker({
+	beforeShowDay: function(date) {
+		if (date.getMonth() == dateToDisable.getMonth() && date.getDate() == dateToDisable.getDate()) {
+			return [false, "custom-date-style"]
+		}
+		return [true, ""];
+	}
+});
+$('#datetimepicker2').datetimepicker({
+     onGenerate:function( ct ){
+    jQuery(this).find('.xdsoft_date')
+      .toggleClass('xdsoft_enabled');
+  },
+	timepicker:false,
+	format:'Y/m/d',
+	formatDate:'Y/m/d',
+	minDate:'0',
+	maxDate:'+1970/03/01'
+});
+
+
+</script>
+</body>
 </html>
