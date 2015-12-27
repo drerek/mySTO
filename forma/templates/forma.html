@@ -6,7 +6,7 @@
      {% csrf_token %}
     <p><label required=True for="id_last_name">Призвіще замовника: </label> <input id="id_last_name" maxlength="200" name="last_name" type="text" /></p> {{ form.last_name.errors }}
 <p><label for="id_first_name">Ім&#39;я замовника:</label> <input id="id_first_name" maxlength="200" name="first_name" type="text" /></p>
-<p><label for="id_date">Забронюйте дату та час:</label> <input type="text" id="datetimepicker2"/> <input id="disableTimeRangesExample" type="text" class="time start" />
+<p><label for="id_date">Забронюйте дату та час:</label> <input type="text" name="date" id="datetimepicker2"/> <input id="disableTimeRangesExample" name="time" type="text" class="time start" />
 <p><label for="id_car_name">Виберіть автомобіль:</label> <select id="id_car_name" name="car_name">
 <option value="" selected="selected">---------</option>
 <option value="1">Toyota Camry</option>
@@ -16,7 +16,7 @@
 </textarea></p>
      <input type="submit" value="Отправить заявку" />
     {% for zanyat in zanyato %}
-    <p>{{ zanyat.date }} </p>
+    <p>{{ zanyat }} </p>
     {%  endfor %}
 </form>
     </p>

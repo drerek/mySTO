@@ -21,12 +21,11 @@ def add_forma(request):
     else:
         form = CreateForma()
         username=auth.get_user(request).username
-        c=calendar.month(2015, 12)
         zanyato = Forma.objects.all()
         if username:
-            return render_to_response('forma.html', {'calendar':c, 'zanyato':zanyato, 'form': form,'first_name':auth.get_user(request).first_name, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
+            return render_to_response('forma.html', {'zanyato':zanyato, 'form': form,'first_name':auth.get_user(request).first_name, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
         else:
-            return render_to_response('forma.html', {'calendar':c, 'zanyato':zanyato, 'form': form, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
+            return render_to_response('forma.html', {'zanyato':zanyato, 'form': form, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
 
 
 def myforms(request):
