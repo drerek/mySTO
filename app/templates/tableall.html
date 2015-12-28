@@ -1,8 +1,49 @@
 {% extends 'tabl.html' %}
 {% load staticfiles %}
+{% block leftnav %}
+<div class="col-sm-3 col-md-2 sidebar">
+			<ul class="nav nav-sidebar">
+				<li {% if not cars_id %}class="active" {% endif %}><a href="/table/all/">Усі ціни <span class="sr-only"></span></a></li>
+			</ul>
+			<ul class="nav nav-sidebar">
+				<li {% if cars_id == "1" %} class="active" {% endif %}><a   href="/table/get/1">Toyota Camry</a></li>
+				<li {% if cars_id == "2" %} class="active" {% endif %}><a href="/table/get/2">Toyota Corolla</a></li>
+				<li {% if cars_id == "3" %} class="active" {% endif %}><a href="/table/get/3">Toyota Land Cruiser</a></li>
+				<li {% if cars_id == "4" %} class="active" {% endif %}><a href="/table/get/4">Toyota GT-86</a></li>
+			</ul>
+		</div>
+{%  endblock %}
+{% block pictures %}
 
+                <h1 class="page-header">Виберіть авто</h1>
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <a href="/table/get/1"> <img src="{% static "camry200.jpg" %}" width="200" height="200"
+                                     {% if cars_id != "1" %}  class="rollover semi" {% endif %}     ></a>
+                <h4>Toyota</h4>
+                <span class="text-muted">Camry</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <a class="rollover" href="/table/get/2"> <img src="{% static "corolla200.jpg" %}" width="200" height="200"
+                                            {% if cars_id != "2" %}  class="rollover semi" {% endif %}> </a>
+                <h4>Toyota</h4>
+                <span class="text-muted">Corolla</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <a class="rollover" href="/table/get/3"> <img src="{% static "cruiser200.jpg" %}" width="200" height="200"
+                                           {% if cars_id != "3" %} class="rollover semi" {% endif %}> </a>
+                <h4>Toyota</h4>
+                <span class="text-muted">Land Cruiser</span>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+                <a class="rollover" href="/table/get/4"> <img src="{% static "gt200.jpg" %}" width="200" height="200"
+                                           {% if cars_id != "4" %}  class="rollover semi" {% endif %}> </a>
+                <h4>Toyota</h4>
+                <span class="text-muted">GT-86</span>
+            </div>
+          </div>
+{% endblock %}
 {% block pagetabl %}
-
               {% for details in detail %}
                 <tr>
                   <td>{{ details.id }}</td>
@@ -11,9 +52,9 @@
                   <td>{{ details.details_price }}</td>
                   <td>
                       {% if details.details_isav %}
-                      В наявності! Вітаємо!
+                      В наявності!
                       {% else %}
-                      Немає в наявності. :(
+                      Нема в наявності!
                       {% endif %}
                   </td>
                 </tr>

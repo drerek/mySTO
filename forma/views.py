@@ -22,10 +22,13 @@ def add_forma(request):
         form = CreateForma()
         username=auth.get_user(request).username
         zanyato = Forma.objects.all()
+        time_list=[]
+        for zanyat in zanyato:
+            time_list.append(zanyat)
         if username:
-            return render_to_response('forma.html', {'zanyato':zanyato, 'form': form,'first_name':auth.get_user(request).first_name, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
+            return render_to_response('forma.html', {'timelist':time_list, 'zanyato':zanyato, 'form': form,'first_name':auth.get_user(request).first_name, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
         else:
-            return render_to_response('forma.html', {'zanyato':zanyato, 'form': form, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
+            return render_to_response('forma.html', {'zanyato':zanyato,'timelist':time_list, 'form': form, 'username':auth.get_user(request).username},context_instance = RequestContext(request))
 
 
 def myforms(request):

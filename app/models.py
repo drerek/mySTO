@@ -1,5 +1,5 @@
 from django.db import models
-
+# -- coding: utf-8 --
 
 # Create your models here.
 class Cars(models.Model):
@@ -23,5 +23,5 @@ class Details(models.Model):
     details_cars = models.ForeignKey(Cars)
 
     def __str__(self):
-        return self.details_name
+        return self.details_name.encode('utf-8')
 

@@ -4,45 +4,12 @@
 {% block page %}
  <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="/table/all/">Усі ціни <span class="sr-only">(current)</span></a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="/table/get/1">Toyota Camry</a></li>
-            <li><a href="/table/get/2">Toyota Corolla</a></li>
-              <li><a href="/table/get/3">Toyota Land Cruiser</a></li>
-              <li><a href="/table/get/4">Toyota GT-86</a></li>
-          </ul>
-        </div>
+{% block leftnav %}
+{% endblock %}
+
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <h1 class="page-header">Виберіть авто</h1>
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-                <a href="/table/get/1"> <img src="{% static "camry200.jpg" %}" width="200" height="200"
-                                             class="img-responsive"></a>
-                <h4>Toyota</h4>
-                <span class="text-muted">Camry</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-                <a href="/table/get/2"> <img src="{% static "corolla200.jpg" %}" width="200" height="200"
-                                             class="img-responsive"></a>
-                <h4>Toyota</h4>
-                <span class="text-muted">Corolla</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-                <a href="/table/get/3"> <img src="{% static "cruiser200.jpg" %}" width="200" height="200"
-                                             class="img-responsive"> </a>
-                <h4>Toyota</h4>
-                <span class="text-muted">Land Cruiser</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-                <a href="/table/get/4"> <img src="{% static "gt200.jpg" %}" width="200" height="200"
-                                             class="img-responsive"> </a>
-                <h4>Toyota</h4>
-                <span class="text-muted">GT-86</span>
-            </div>
-          </div>
+      {%  block pictures %}
+          {% endblock %}
           <h2 class="sub-header">Прайс-лист</h2>
           <div class="table-responsive">
             <table class="table table-striped">
