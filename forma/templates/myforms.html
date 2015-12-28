@@ -10,7 +10,6 @@
          <th>Прізвище замовника</th>
          <th>Дата запису</th>
          <th>Машина</th>
-         <th>Деталь на заміну</th>
          <th>Заявлена проблема</th>
          <th>Перевірка адміністратором</th>
      </tr>
@@ -19,8 +18,8 @@
     {%  for myform in myforms %}
 <tr>
     <td>{{  myform.first_name  }}</td>
-    <td> {{ myform.last_name }}</td>
-    <td>{{ myform.date }}</td>
+    <td>{{ myform.last_name }}</td>
+    <td>{{ myform }}</td>
     <td>{{ myform.car_name }}</td>
     <td>{{ myform.problem }}</td>
 <td> {% if myform.is_checked %}
