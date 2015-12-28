@@ -1,3 +1,4 @@
+# -- coding: utf-8 --
 from django.contrib import auth
 from django.shortcuts import render
 from django.http.response import HttpResponse
@@ -41,8 +42,8 @@ def tableforeach(request, cars_id=1):
     t = get_template('tableall.html')
     username = auth.get_user(request).username
     if username:
-        html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'username' : auth.get_user(request).username,
+        html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'cars_id':cars_id, 'username' : auth.get_user(request).username,
                          'first_name': auth.get_user(request).first_name})
     else:
-        html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'username' : auth.get_user(request).username})
+        html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'cars_id':cars_id, 'username' : auth.get_user(request).username})
     return HttpResponse(html)

@@ -282,3 +282,10 @@ body {
     border-radius: 0 0 10px 0;
 }
 
+.semi {
+    opacity: 0.2;
+}
+
+img.rollover:hover{
+    opacity: 1;
+}
