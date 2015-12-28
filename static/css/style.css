@@ -241,11 +241,12 @@ body {
     margin: 0;
     padding: 16px 0 0 0;
     text-transform: uppercase;
-    font-size: 12pt;
+    font-size: 10pt;
 }
 
 .main-signin .main-signin__foot .foot__right {
     float: left;
+    padding: 3.5% 0 0 6%;
     width: 42%;
 }
 
