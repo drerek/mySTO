@@ -20,7 +20,9 @@ location.replace("/home/");
                     <input type="text" name="username" id="username"/>
                     <input type="password" name="password" id="password"/>
                     {% if login_error %}
-                        <label>{{ login_error }}</label>
+                        <label>
+                        {{ login_error }}
+                        </label>
                     {% endif %}
                     <input class="button" type="submit" value="Вхід">
                     <input type="button" onclick="location.href='/register/'" class="btn btn-success"

@@ -36,6 +36,7 @@ def success(request):
 
 def login(request):
         args = {}
+        args['username'] = auth.get_user(request).username
         args.update(csrf(request))
         if request.POST:
             username = request.POST.get('username', '')
@@ -49,13 +50,10 @@ def login(request):
             else:
                 #Отображение страницы с ошибкой
                 args['login_error'] = "Такого користувача не знайдено :("
-                return render_to_response('login.html', {'args' : args, 'username' : auth.get_user(request).username} , context_instance = RequestContext(request))
+
+                return render_to_response('login.html', args, context_instance = RequestContext(request))
         else:
-            username = auth.get_user(request).username
-            if username:
-                return render_to_response('login.html', {'args' : args, 'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name} , context_instance = RequestContext(request))
-            else:
-                return render_to_response('login.html', {'args' : args, 'username' : auth.get_user(request).username} , context_instance = RequestContext(request))
+            return render_to_response('login.html', args, context_instance = RequestContext(request))
 
 
 
