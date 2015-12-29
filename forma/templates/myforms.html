@@ -9,9 +9,9 @@
          <th> Імя замовника </th>
          <th>Прізвище замовника</th>
          <th>Дата запису</th>
-         <th>Машина</th>
          <th>Заявлена проблема</th>
          <th>Перевірка адміністратором</th>
+         <th>Машина</th>
      </tr>
      </thead>
     <tbody>
@@ -20,13 +20,14 @@
     <td>{{  myform.first_name  }}</td>
     <td>{{ myform.last_name }}</td>
     <td>{{ myform }}</td>
-    <td>{{ myform.car_name }}</td>
+
     <td>{{ myform.problem }}</td>
 <td> {% if myform.is_checked %}
                       Заявка підтвержена, час узгоджений
                       {% else %}
                       Заявка не перевірена
                       {% endif %}</td>
+    <td>{{ myform.car_name }}</td>
 
 
         </tr>
