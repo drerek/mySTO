@@ -47,3 +47,4 @@ def tableforeach(request, cars_id=1):
     else:
         html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'cars_id':cars_id, 'username' : auth.get_user(request).username})
     return HttpResponse(html)
+

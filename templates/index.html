@@ -74,27 +74,14 @@
   <script src="http://jonthornton.github.io/Datepair.js/dist/datepair.js"></script>
     <script src="http://jonthornton.github.io/Datepair.js/dist/jquery.datepair.js"></script>
 <script>
-                $('#datepairExample .time').timepicker({
-                    'showDuration': true,
-                    'timeFormat': 'g:ia'
-                });
-    $('#disableTimeRangesExample').timepicker({
-    'disableTimeRanges': [
-        ['8', '12'],
-        ['15', '17']
-    ],
-        'timeFormat': 'H:i',
-        'minTime': '8',
-        'maxTime': '16',
-        'step': 120
-});
+
 
             </script>
   <script src="{% static "static/date/build/jquery.datetimepicker.full.js"%}"></script>
   <script>
 
 $.datetimepicker.setLocale('uk');
-var dateToDisable = new Date();
+/*var dateToDisable = new Date();
 	dateToDisable.setDate(dateToDisable.getDate() + 2);
 $('#datetimepicker2').datetimepicker({
 	beforeShowDay: function(date) {
@@ -103,7 +90,7 @@ $('#datetimepicker2').datetimepicker({
 		}
 		return [true, ""];
 	}
-});
+});*/
 $('#datetimepicker2').datetimepicker({
      onGenerate:function( ct ){
     jQuery(this).find('.xdsoft_date')
@@ -112,9 +99,96 @@ $('#datetimepicker2').datetimepicker({
 	timepicker:false,
 	format:'Y-m-d',
 	formatDate:'Y-m-d',
-	minDate:'0',
-	maxDate:'+1970-03-01'
+	minDate:'0'
 });
+
+function showdate() {
+    $('#datepairExample .time').remove();
+    var date = $("#datetimepicker2").val();
+    if (date == "") {
+        alert("Спочатку виберіть дату");
+    }
+    else {
+        $('#datepairExample .time').timepicker({
+            'showDuration': true,
+            'timeFormat': 'g:ia'
+        });
+        var ajx = $.ajax({
+            type: 'GET',
+            url: "/date_from_ajax/",
+            data: {
+                "data": date
+            },
+            /*"csrfmiddlewaretoken": $('#datetimepicker2 input[name=csrfmiddlewaretoken]').val()*/
+            dataType: 'json',
+            /*complete: ajx.abort(),*/
+            success: function (dat) {
+                /*alert(typeof((Number(dat[i])+1).toString()));*/
+                var leng = dat['time_list'].length;
+                if (leng == 0) {
+                    var a0 = "";
+                    var a1 = "";
+                    var a2 = "";
+                    var a3 = "";
+                    var a4 = "";
+                }
+                if (leng == 1) {
+                    var a0 = [(dat['time_list'][0]), ((Number((dat['time_list'][0])) + 1).toString())];
+                    var a1 = "";
+                    var a2 = "";
+                    var a3 = "";
+                    var a4 = "";
+                }
+                if (leng == 2) {
+                    var a0 = [(dat['time_list'][0]), ((Number((dat['time_list'][0])) + 1).toString())];
+                    var a1 = [(dat['time_list'][1]), ((Number((dat['time_list'][1])) + 1).toString())];
+                    var a2 = "";
+                    var a3 = "";
+                    var a4 = "";
+                }
+                if (leng == 3) {
+                    var a0 = [(dat['time_list'][0]), ((Number((dat['time_list'][0])) + 1).toString())];
+                    var a1 = [(dat['time_list'][1]), ((Number((dat['time_list'][1])) + 1).toString())];
+                    var a2 = [(dat['time_list'][2]), ((Number((dat['time_list'][2])) + 1).toString())];
+                    var a3 = "";
+                    var a4 = "";
+                }
+                if (leng == 4) {
+                    var a0 = [(dat['time_list'][0]), ((Number((dat['time_list'][0])) + 1).toString())];
+                    var a1 = [(dat['time_list'][1]), ((Number((dat['time_list'][1])) + 1).toString())];
+                    var a2 = [(dat['time_list'][2]), ((Number((dat['time_list'][2])) + 1).toString())];
+                    var a3 = [(dat['time_list'][3]), ((Number((dat['time_list'][3])) + 1).toString())];
+                    var a4 = "";
+                }
+                if (leng == 5) {
+                    var a0 = [(dat['time_list'][0]), ((Number((dat['time_list'][0])) + 1).toString())];
+                    var a1 = [(dat['time_list'][1]), ((Number((dat['time_list'][1])) + 1).toString())];
+                    var a2 = [(dat['time_list'][2]), ((Number((dat['time_list'][2])) + 1).toString())];
+                    var a3 = [(dat['time_list'][3]), ((Number((dat['time_list'][3])) + 1).toString())];
+                    var a4 = [(dat['time_list'][4]), ((Number((dat['time_list'][4])) + 1).toString())];
+                }
+                /*alert (dat['time_list'][i]);*/
+                $('#disableTimeRangesExample').timepicker({
+                    'disableTimeRanges': [
+                        a0,
+                        a1,
+                        a2,
+                        a3,
+                        a4
+                    ],
+                    'timeFormat': 'H:i',
+                    'minTime': '8',
+                    'maxTime': '16',
+                    'step': 120
+                });
+
+            }
+        });
+    }
+
+    }
+
+
 
 
 </script>

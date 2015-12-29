@@ -1,5 +1,5 @@
 # -- coding: utf-8 --
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from django.contrib import auth
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -39,3 +39,12 @@ def myforms(request):
     else:
         html = t.render({'myforms' : Forma.objects.filter(user_name=auth.get_user(request)), 'username' : auth.get_user(request).username})
     return HttpResponse(html)
+
+
+def date_from_ajax (request):
+    if request.method == "GET" and request.is_ajax():
+        time=Forma.objects.filter(date=request.GET["data"])
+        time_list=[]
+        for times in time:
+            time_list.append(times.time.strftime("%H"))
+        return JsonResponse({'time_list':time_list})
