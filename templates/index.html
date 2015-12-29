@@ -15,8 +15,6 @@
     <link href="{% static "static/css/carousel.css" %}" rel="stylesheet">
       <link href="{% static "static/css/dashboard.css" %}" rel="stylesheet">
       <link href="{% static "static/css/style.css" %}" rel="stylesheet">
-       <link rel="stylesheet" type="text/css" href="{% static "static/calendar/jquery.timepicker.css"%}" />
-      <link rel="stylesheet" type="text/css" href="{% static "static/calendar/lib/bootstrap-datepicker.css" %}"/>
       <link rel="stylesheet" type="text/css" href="{% static "static/date/jquery.datetimepicker.css"%}"/>
 
 
@@ -62,33 +60,14 @@
 
     {% block page %} {% endblock %}
 
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="{% static "static/js/validation.js" %}"></script>
     <script src="{% static "static/js/jquery.js" %}"></script>
     <script src="{% static "static/js/bootstrap.min.js" %}"></script>
     <script src="{% static "static/js/holder.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "static/calendar/jquery.timepicker.js"%}"></script>
-    <script type="text/javascript" src="{% static "static/calendar/lib/bootstrap-datepicker.js"%}"></script>
-    <script type="text/javascript" src="{% static "static/calendar/lib/site.js"%}"></script>
-  <script src="http://jonthornton.github.io/Datepair.js/dist/datepair.js"></script>
-    <script src="http://jonthornton.github.io/Datepair.js/dist/jquery.datepair.js"></script>
-
   <script src="{% static "static/date/build/jquery.datetimepicker.full.js"%}"></script>
   <script>
 
 $.datetimepicker.setLocale('uk');
-/*var dateToDisable = new Date();
-	dateToDisable.setDate(dateToDisable.getDate() + 2);
-$('#datetimepicker2').datetimepicker({
-	beforeShowDay: function(date) {
-		if (date.getMonth() == dateToDisable.getMonth() && date.getDate() == dateToDisable.getDate()) {
-			return [false, "custom-date-style"]
-		}
-		return [true, ""];
-	}
-});*/
 function DiffArrays(A,B)
 {
     var M = A.length, N = B.length, c = 0, C = [];
@@ -119,7 +98,7 @@ $('#datetimepicker2').datetimepicker({
             },
             dataType: 'json',
             success: function (dat) {
-                var allow = ['8:00', '10:00', '12:00', '14:00', '16:00'];
+                var allow = ['08:00', '10:00', '12:00', '14:00', '16:00'];
                 var a0;
                 a0=DiffArrays(allow,dat['time_list']);
                 $('#disableTimeRangesExample').datetimepicker({
@@ -134,12 +113,6 @@ $('#datetimepicker2').datetimepicker({
 
     }
 });
-
-
-
-
-
-
 </script>
 </body>
 </html>
