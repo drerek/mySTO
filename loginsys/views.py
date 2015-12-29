@@ -8,7 +8,6 @@ from django.template.loader import get_template
 from django.views.generic.edit import FormView
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import auth
-
 from loginsys.forms import UserCreateForm
 
 
@@ -35,6 +34,9 @@ def success(request):
     return HttpResponse(html)
 
 def login(request):
+    if auth.get_user(request).username:
+        return HttpResponseRedirect("/home/")
+    else:
         args = {}
         args['username'] = auth.get_user(request).username
         args.update(csrf(request))
@@ -58,7 +60,13 @@ def login(request):
 
 
 def logout(request):
-    auth.logout(request)
-    return redirect('/home/')
+    if auth.get_user(request).username:
+        auth.logout(request)
+        return redirect('/home/')
+    else:
+        t = get_template('errors.html')
+        html = t.render()
+        return HttpResponse(html)
+
 
 

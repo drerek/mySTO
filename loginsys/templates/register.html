@@ -2,6 +2,9 @@
 {% load staticfiles %}
 
 {% block page %}
+    {% if user.is_authenticated %}
+        <p>ERROR!</p>
+    {% else %}
      <form name="register" action="." method="post" onsubmit="return validate()">
          <div class="main-signin__registr">
              <div class="main-signin__head">
@@ -27,4 +30,5 @@
              </div>
          </div>
      </form>
+    {% endif %}
 {% endblock %}
