@@ -45,6 +45,7 @@ body {
     width: 455px;
     height: 200px;
     margin: 100px auto;
+    text-align: center;
 }
 
 .main-signin .main-signin__head {
@@ -74,7 +75,6 @@ body {
 
 .main-signin .main-signin__middle .middle__form label {
     color: #ff0011;
-    text-indent: 20%;
     font-size: 12pt;
 }
 
@@ -137,6 +137,7 @@ body {
     width: 500px;
     height: 200px;
     margin: 15px auto;
+    text-align: center;
 }
 
 .main-signin__registr .main-signin__head {
@@ -167,7 +168,6 @@ body {
 
 .main-signin__registr .main-signin__middle .middle__form__registr label {
     color: #ffde09;
-    text-indent: 40%;
     font-size: 12pt;
 }
 .main-signin__registr .main-signin__middle .middle__form__registr li {
@@ -286,6 +286,7 @@ body {
     width: 500px;
     height: 200px;
     margin: 15px auto;
+    text-align: center;
 }
 
 .main-signin__forma .main-signin__head {
@@ -316,7 +317,7 @@ body {
 
 .main-signin__forma .main-signin__middle .middle__form__forma label {
     color: #ffde09;
-    text-indent: 40%;
+    display: block;
     font-size: 12pt;
 }
 .main-signin__forma .main-signin__middle .middle__form__forma li {
