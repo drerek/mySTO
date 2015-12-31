@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block page %}
-     <form   action="." method="post">
+     <form name="register" action="." method="post" onsubmit="return validate()">
          <div class="main-signin__registr">
              <div class="main-signin__head">
                 <p>РЕЄСТРАЦІЯ</p>
@@ -10,29 +10,18 @@
              <div class="main-signin__middle">
                  <div class="middle__form__registr">
                      {% csrf_token %}
-                         <br>
                     <label required=True for="id_username">Логін:</label> {{ form.username }}
-                         {{ form.username.errors }}
-
-                         <br>
+                     <div class="valid" id="username"></div>
                     <label for="id_email">E-mail:</label> {{ form.email }}
-                    {{ form.email.errors }}
-
-                         <br>
+                     <div class="valid" id="email"></div>
                     <label required=True for="id_first_name">Ім'я:</label> {{ form.first_name }}
-                    {{ form.first_name.errors }}
-
-                         <br>
+                     <div class="valid" id="first_name"></div>
                     <label required=True for="id_last_name">Прізвище:</label> {{ form.last_name }}
-                    {{ form.last_name.errors }}
-
-                         <br>
+                     <div class="valid" id="last_name"></div>
                     <label for="id_password1">Пароль:</label> {{ form.password1 }}
-                    {{ form.password1.errors }}
-
-                         <br>
+                     <div class="valid" id="password1"></div>
                     <label for="id_password2">Пароль (знову):</label> {{ form.password2 }}
-                    {{ form.password2.errors }}
+                     <div class="valid" id="password2"></div>
                      <input type="submit" value="Зареєструвати" />
                  </div>
              </div>
