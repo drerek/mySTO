@@ -2,7 +2,7 @@
 
 {% block page %}
    <p>
- <form method="post">
+ <form name="forma" method="post" onsubmit="return validateForm()">
      {% csrf_token %}
      <div class="main-signin__forma">
          <div class="main-signin__head">
@@ -11,10 +11,13 @@
          <div class="main-signin__middle">
              <div class="middle__form__forma">
 
-                <p><label required=True for="id_last_name">Призвіще замовника: </label> <input id="id_last_name" maxlength="200" name="last_name" type="text" /></p> {{ form.last_name.errors }}
+                <p><label required=True for="id_last_name">Призвіще замовника: </label> <input id="id_last_name" maxlength="200" name="last_name" type="text" /></p>
+                 <div class="valid" id="last_name"></div>
                 <p><label for="id_first_name">Ім&#39;я замовника:</label> <input id="id_first_name" maxlength="200" name="first_name" type="text" /></p>
+                <div class="valid" id="first_name"></div>
                  <div class="middle__form__forma__calendar">
                     <p><label for="id_date">Забронюйте дату та час:</label> <input type="text" name="date" id="datetimepicker2"/> <input onclick="showdate()" id="disableTimeRangesExample" name="time" type="text" class="time start" /></p>
+                     <div class="valid" id="datetime"></div>
                  </div>
                  <p><label for="id_car_name">Виберіть автомобіль:</label> <select id="id_car_name" name="car_name">
                 <option value="" selected="selected">---------</option>
@@ -23,6 +26,7 @@
                      <option value="3">Toyota Land Cruiser</option>
                      <option value="4">Toyota GT-86</option>
                 </select></p>
+                 <div class="valid" id="car_name"></div>
                 <p><label for="id_problem">Побажання:</label> <textarea cols="40" id="id_problem" maxlength="200" name="problem" rows="10"></textarea>
       </p>
              </div>
