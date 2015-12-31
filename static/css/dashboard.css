@@ -102,4 +102,7 @@ body {
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
+  background: #8cb5ff;
+  box-shadow: inset #2a45ff 0 0 40px 10px,
+                    #2a45ff 0 0 24px 12px;
 }
