@@ -16,7 +16,7 @@ class RegisterFormView(FormView):
 
     # Ссылка, на которую будет перенаправляться пользователь в случае успешной регистрации.
     # В данном случае указана ссылка на страницу входа для зарегистрированных пользователей.
-    success_url = "/success/"
+    success_url = "/accounts/login/"
 
     # Шаблон, который будет использоваться при отображении представления.
     template_name = "register.html"
@@ -29,9 +29,7 @@ class RegisterFormView(FormView):
         return super(RegisterFormView, self).form_valid(form)
 
 def success(request):
-    t = get_template('register_succesfully.html')
-    html = t.render()
-    return HttpResponse(html)
+    return HttpResponseRedirect("/accounts/login/")
 
 def login(request):
     if auth.get_user(request).username:

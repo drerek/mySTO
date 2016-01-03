@@ -18,7 +18,7 @@ def add_forma(request):
                  forma = form.save(commit=False)
                  forma.user_name = request.user
                  forma.save()
-                 return HttpResponseRedirect("/home/")
+                 return HttpResponseRedirect("/myforms/")
         else:
             form = CreateForma()
             username=auth.get_user(request).username
