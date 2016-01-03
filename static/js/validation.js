@@ -129,3 +129,5 @@ function validateForm(){
 		return false;	
 	}
 }
+
+function validateLogin(){}
