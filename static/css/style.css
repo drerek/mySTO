@@ -464,3 +464,10 @@ img.rollover:hover{
   border-right:1px solid #37B5A5;
   padding: 7px 17px;
 }
+
+.pict{
+  margin: 10px 0 0 0;
+  border-top-style: dotted;
+  border-top-color: #337ab7;
+  border-top-width: 15px;
+}
