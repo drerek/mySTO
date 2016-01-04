@@ -89,6 +89,7 @@ function validateForm(){
 	var fn=document.forms["forma"]["first_name"].value;
 	var date=document.forms["forma"]["date"].value;
 	var time=document.forms["forma"]["time"].value;
+	var ta=document.forms["forma"]["problem"].value;
 	var cn = document.getElementById("id_car_name").options.selectedIndex;
 	var txt = document.getElementById("id_car_name").options[cn].text;
 	var k=0;
@@ -98,6 +99,7 @@ function validateForm(){
 	document.getElementById('last_name').innerHTML = '';
 	document.getElementById('datetime').innerHTML = '';
 	document.getElementById('car_name').innerHTML = '';
+	document.getElementById('problem').innerHTML = '';
 	if(ln==null || ln=="") {
 		document.getElementById('last_name').innerHTML = 'Це поле обов\'язкове для заповнення!';
 		k=1;
@@ -123,6 +125,10 @@ function validateForm(){
 	}
 	if(txt=="---------"){
 		document.getElementById('car_name').innerHTML = 'Оберіть авто!';
+		k=1;
+	}
+	if(ta==null || ta=="") {
+		document.getElementById('problem').innerHTML = 'Це поле обов\'язкове для заповнення!';
 		k=1;
 	}
 	if(k==1){

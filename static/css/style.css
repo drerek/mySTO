@@ -319,6 +319,7 @@ body {
     color: #ffde09;
     display: block;
     font-size: 12pt;
+    margin: 5px;
 }
 .main-signin__forma .main-signin__middle .middle__form__forma li {
     color: #ff000a;
