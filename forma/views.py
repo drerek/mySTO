@@ -46,5 +46,5 @@ def date_from_ajax (request):
         time=Forma.objects.filter(date=request.GET["data"])
         time_list=[]
         for times in time:
-            time_list.append(times.time.strftime("%H"))
+            time_list.append(times.time.strftime("%H:%M"))
         return JsonResponse({'time_list':time_list})
