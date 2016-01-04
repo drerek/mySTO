@@ -79,16 +79,6 @@
   <script>
 
 $.datetimepicker.setLocale('uk');
-/*var dateToDisable = new Date();
-	dateToDisable.setDate(dateToDisable.getDate() + 2);
-$('#datetimepicker2').datetimepicker({
-	beforeShowDay: function(date) {
-		if (date.getMonth() == dateToDisable.getMonth() && date.getDate() == dateToDisable.getDate()) {
-			return [false, "custom-date-style"]
-		}
-		return [true, ""];
-	}
-});*/
 function DiffArrays(A,B)
 {
     var M = A.length, N = B.length, c = 0, C = [];
@@ -119,7 +109,7 @@ $('#datetimepicker2').datetimepicker({
             },
             dataType: 'json',
             success: function (dat) {
-                var allow = ['8:00', '10:00', '12:00', '14:00', '16:00'];
+                var allow = ['08:00', '10:00', '12:00', '14:00', '16:00'];
                 var a0;
                 a0=DiffArrays(allow,dat['time_list']);
                 $('#disableTimeRangesExample').datetimepicker({
@@ -134,12 +124,6 @@ $('#datetimepicker2').datetimepicker({
 
     }
 });
-
-
-
-
-
-
 </script>
 </body>
 </html>
