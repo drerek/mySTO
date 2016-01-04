@@ -10,6 +10,13 @@ function DiffArrays(A,B)
      }
    return C;
 }
+function showtime(){
+	var date = $("#datetimepicker2").val();
+	document.getElementById('datetime').innerHTML = '';
+	if (date == "") {
+		document.getElementById('datetime').innerHTML = 'Cпочатку оберіть дату!';
+	}
+}
 $('#datetimepicker2').datetimepicker({
      onGenerate:function( ct ){
     jQuery(this).find('.xdsoft_date')
