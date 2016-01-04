@@ -35,13 +35,13 @@
                 <li><a href="/home/">Головна</a></li>
                 <li><a href="/about/">Про нас</a></li>
                   <li><a href="/table/all/">Ціни</a></li>
-                  {% if username %}
-                  <li><a href="/form/">Запис на ТО</a></li>
-                      <li><a href="/myforms/">Мої записи на ТО</a></li>
+                  {% if username and not username == 'drerek' %}
+                          <li><a href="/form/">Запис на ТО</a></li>
+                              <li><a href="/myforms/">Мої записи на ТО</a></li>
                   {% endif %}
-                {% if username == 'drerek'  %}
-                    <li><a href="/admin/">Адміністрування</a></li>
-                {% endif %}
+                  {% if username and username == 'drerek'  %}
+                      <li><a href="/admin/">Адміністрування</a></li>
+                  {% endif %}
                   </ul>
                     <div class="nav  navbar-right">
 
