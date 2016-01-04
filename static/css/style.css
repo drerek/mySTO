@@ -169,6 +169,7 @@ body {
 .main-signin__registr .main-signin__middle .middle__form__registr label {
     color: #ffde09;
     font-size: 12pt;
+    margin: 5px;
 }
 .main-signin__registr .main-signin__middle .middle__form__registr .valid {
     color: #ff000a;

@@ -32,7 +32,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse ">
               <ul class="nav navbar-nav">
-                <li><a href="/home/">Головна</a></li>
+                <li><a href="/home/" onclick="menu_active()">Головна</a></li>
                 <li><a href="/about/">Про нас</a></li>
                   <li><a href="/table/all/">Ціни</a></li>
                   {% if username and not username == 'drerek' %}
@@ -117,5 +117,14 @@ $('#datetimepicker2').datetimepicker({
     }
 });
 </script>
+  <script>
+$(function () {
+  $('#navbar ul li a').each(function () {
+    if (window.location.href == this.href) {
+      $(this).closest('li').addClass('active');
+    }
+  });
+});
+  </script>
 </body>
 </html>
