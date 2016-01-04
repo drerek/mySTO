@@ -111,10 +111,6 @@ $('#datetimepicker2').datetimepicker({
 	minDate:'0',
     onChangeDateTime :function() {
     var date = $("#datetimepicker2").val();
-    if (date == "") {
-        alert("Спочатку виберіть дату");
-    }
-    else {
         $.ajax({
             type: 'GET',
             url: "/date_from_ajax/",
@@ -135,7 +131,6 @@ $('#datetimepicker2').datetimepicker({
 
             }
         });
-    }
 
     }
 });
