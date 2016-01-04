@@ -3,7 +3,9 @@
 
 {% block page %}
     {% if user.is_authenticated %}
-        <p>ERROR!</p>
+        <div class="registr">
+            <p> ERROR!</p>
+        </div>
     {% else %}
      <form name="register" action="." method="post" onsubmit="return validate()">
          <div class="main-signin__registr">
