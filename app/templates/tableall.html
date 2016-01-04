@@ -47,8 +47,8 @@
               {% for details in detail %}
                 <tr>
                   <td>{{ details.id }}</td>
-                  <td>{{ details.details_cars }}</td>
                   <td>{{ details.details_name }}</td>
+                    <td>{{ details.details_cars }}</td>
                   <td>{{ details.details_price }}</td>
                   <td>
                       {% if details.details_isav %}
@@ -59,10 +59,4 @@
                   </td>
                 </tr>
               {% endfor %}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
 {% endblock %}
