@@ -1,13 +1,11 @@
 # -- coding: utf-8 --
 from django.contrib import auth
-from django.shortcuts import render, render_to_response
-from django.http.response import HttpResponse
-from django.template import Context, RequestContext
-from django.template.loader import get_template
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 
 # Create your views here.
-from app.models import Cars, Details
+from app.models import Details
 
 
 def home(request):
@@ -39,5 +37,3 @@ def tableforeach(request, cars_id=1):
                          'first_name': auth.get_user(request).first_name}, context_instance = RequestContext(request))
     else:
         return render_to_response('tableall.html', {'detail' : Details.objects.filter(details_cars_id=cars_id), 'cars_id':cars_id, 'username' : auth.get_user(request).username}, context_instance = RequestContext(request))
-
-

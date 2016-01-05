@@ -3,7 +3,7 @@ from django.db import models
 
 # Create your models here.
 class Cars(models.Model):
-    class Meta():
+    class Meta:
         db_table = 'cars'
 
     cars_name = models.CharField(max_length=200)
@@ -14,7 +14,7 @@ class Cars(models.Model):
 
 
 class Details(models.Model):
-    class Meta():
+    class Meta:
         db_table = 'details'
 
     details_name = models.CharField(max_length=200)
@@ -24,4 +24,3 @@ class Details(models.Model):
 
     def __str__(self):
         return self.details_name.encode('utf-8')
-
