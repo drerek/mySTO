@@ -1,8 +1,8 @@
 # -- coding: utf-8 --
 from django.contrib import auth
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http.response import HttpResponse
-from django.template import Context
+from django.template import Context, RequestContext
 from django.template.loader import get_template
 
 
@@ -11,40 +11,33 @@ from app.models import Cars, Details
 
 
 def home(request):
-    t = get_template('home.html')
     username = auth.get_user(request).username
     if username:
-        html = t.render({'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name})
+        return render_to_response('home.html', {'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name}, context_instance = RequestContext(request))
     else:
-        html = t.render({'username' : auth.get_user(request).username})
-    return HttpResponse(html)
+        return render_to_response('home.html', {'username' : auth.get_user(request).username}, context_instance = RequestContext(request))
 
 def tabl(request):
-    t = get_template('tableall.html')
     username = auth.get_user(request).username
     if username:
-        html = t.render({'detail': Details.objects.all(), 'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name})
+        return render_to_response('tableall.html', {'detail': Details.objects.all(), 'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name}, context_instance = RequestContext(request))
     else:
-        html = t.render({'detail': Details.objects.all(), 'username' : auth.get_user(request).username})
-    return HttpResponse(html)
+        return render_to_response('tableall.html', {'detail': Details.objects.all(), 'username' : auth.get_user(request).username}, context_instance = RequestContext(request))
 
 def about(request):
-    t = get_template('about.html')
     username = auth.get_user(request).username
     if username:
-        html = t.render({'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name})
+        return render_to_response('about.html', {'username' : auth.get_user(request).username, 'first_name':auth.get_user(request).first_name}, context_instance = RequestContext(request))
     else:
-        html = t.render({'username' : auth.get_user(request).username})
-    return HttpResponse(html)
+        return render_to_response('about.html', {'username' : auth.get_user(request).username}, context_instance = RequestContext(request))
 
 
 def tableforeach(request, cars_id=1):
-    t = get_template('tableall.html')
     username = auth.get_user(request).username
     if username:
-        html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'cars_id':cars_id, 'username' : auth.get_user(request).username,
-                         'first_name': auth.get_user(request).first_name})
+        return render_to_response('tableall.html', {'detail' : Details.objects.filter(details_cars_id=cars_id), 'cars_id':cars_id, 'username' : auth.get_user(request).username,
+                         'first_name': auth.get_user(request).first_name}, context_instance = RequestContext(request))
     else:
-        html = t.render({'detail' : Details.objects.filter(details_cars_id=cars_id), 'cars_id':cars_id, 'username' : auth.get_user(request).username})
-    return HttpResponse(html)
+        return render_to_response('tableall.html', {'detail' : Details.objects.filter(details_cars_id=cars_id), 'cars_id':cars_id, 'username' : auth.get_user(request).username}, context_instance = RequestContext(request))
+
 

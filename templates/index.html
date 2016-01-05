@@ -34,11 +34,11 @@
                 <li><a href="/home/" onclick="menu_active()">Головна</a></li>
                 <li><a href="/about/">Про нас</a></li>
                   <li id="price"><a href="/table/all/">Ціни</a></li>
-                  {% if username and not username == 'drerek' %}
+                  {% if user.is_authenticated and not user.is_superuser %}
                           <li><a href="/form/">Запис на ТО</a></li>
-                              <li><a href="/myforms/">Мої записи на ТО</a></li>
+                          <li><a href="/myforms/">Мої записи на ТО</a></li>
                   {% endif %}
-                  {% if username and username == 'drerek'  %}
+                  {% if user.is_authenticated and user.is_superuser  %}
                       <li><a href="/admin/">Адміністрування</a></li>
                   {% endif %}
                   </ul>

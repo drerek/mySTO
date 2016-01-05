@@ -41,10 +41,9 @@ def myforms(request):
         t = get_template('myforms.html')
         username=auth.get_user(request).username
         if username:
-            html = t.render({'myforms' : Forma.objects.filter(user_name=auth.get_user(request)),'first_name':auth.get_user(request).first_name, 'username' : auth.get_user(request).username})
+            return render_to_response('myforms.html', {'myforms' : Forma.objects.filter(user_name=auth.get_user(request)),'first_name':auth.get_user(request).first_name, 'username' : auth.get_user(request).username}, context_instance = RequestContext(request))
         else:
-            html = t.render({'myforms' : Forma.objects.filter(user_name=auth.get_user(request)), 'username' : auth.get_user(request).username})
-        return HttpResponse(html)
+            return render_to_response('myforms.html', {'myforms' : Forma.objects.filter(user_name=auth.get_user(request)), 'username' : auth.get_user(request).username}, context_instance = RequestContext(request))
     else:
         t = get_template('errors.html')
         html = t.render()
